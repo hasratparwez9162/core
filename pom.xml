@@ -114,15 +114,4 @@
 			</snapshots>
 		</repository>
 	</repositories>
-
-	<!-- Optional: Distribution Management for Deploying to Remote Repos -->
-	<!--
-    <distributionManagement>
-        <repository>
-            <id>internal.repo</id>
-            <name>Internal Repository</name>
-            <url>http://your.repository.url/repo</url>
-        </repository>
-    </distributionManagement>
-    -->
 </project>

@@ -3,7 +3,7 @@ name: Build and Deploy to GitHub Packages
 on:
   push:
     branches:
-      - main  # Trigger action on pushing to main branch (you can change this)
+      - master  # Trigger action on pushing to master branch (you can change this)
 
 jobs:
   build:

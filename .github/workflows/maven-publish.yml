@@ -23,7 +23,7 @@ jobs:
       run: mvn clean install
 
     - name: Deploy to GitHub Packages
-      run: mvn deploy -s .github/maven/settings.xml
+      run: mvn deploy -s .github/settings.xml
 
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

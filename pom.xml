@@ -10,7 +10,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.1.0</version> <!-- Aligned with user-service's Spring Boot version -->
+		<version>3.1.0</version> <!-- Matches user-service's Spring Boot version -->
 		<relativePath/> <!-- Lookup parent from repository -->
 	</parent>
 
@@ -23,7 +23,6 @@
 	<name>core</name>
 	<description>Core utility library for Banking Application Microservices</description>
 
-
 	<!-- Properties for consistent configuration -->
 	<properties>
 		<java.version>17</java.version>
@@ -34,7 +33,7 @@
 
 	<!-- Dependencies required by the core library -->
 	<dependencies>
-		<!-- Spring Boot Starter (if your core utilities depend on Spring Boot) -->
+		<!-- Spring Boot Starter -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
@@ -44,11 +43,9 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.18.26</version> <!-- Specify Lombok version -->
+			<version>1.18.26</version>
 			<scope>provided</scope>
 		</dependency>
-
-		<!-- Add other dependencies your core utilities require -->
 
 		<!-- Testing Dependencies -->
 		<dependency>
@@ -60,8 +57,9 @@
 
 	<!-- Build Configuration -->
 	<build>
+		<finalName>core-0.0.1</finalName>
 		<plugins>
-
+			<!-- Compiler Plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -72,7 +70,7 @@
 				</configuration>
 			</plugin>
 
-
+			<!-- JAR Plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
@@ -80,22 +78,6 @@
 				<configuration>
 					<finalName>core-0.0.1</finalName>
 				</configuration>
-			</plugin>
-
-			<!-- Spring Boot Maven Plugin -->
-			<plugin>
-				<artifactId>maven-jar-plugin</artifactId>
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-						<configuration>
-							<classifier>origin</classifier>
-						</configuration>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 	</build>
@@ -114,4 +96,13 @@
 			</snapshots>
 		</repository>
 	</repositories>
+
+	<!-- Distribution Management for GitHub Packages -->
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<url>https://maven.pkg.github.com/hasratparwez9162/packages</url>
+		</repository>
+	</distributionManagement>
+
 </project>

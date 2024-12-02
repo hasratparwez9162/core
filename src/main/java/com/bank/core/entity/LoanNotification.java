@@ -31,4 +31,6 @@ public class LoanNotification {
     private BigDecimal remainingBalance;
 
     private String loanStatus;
+    private String username;
+    private String email;
 }

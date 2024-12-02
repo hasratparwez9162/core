@@ -13,4 +13,5 @@ public class CardNotification {
     private CardType cardType;
     private CardStatus status;
     private String message;
+    private String email;
 }

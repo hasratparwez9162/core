@@ -1,0 +1,29 @@
+name: Build and Deploy to GitHub Packages
+
+on:
+  push:
+    branches:
+      - master  # Trigger action on pushing to master branch (you can change this)
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Java
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'  # Replace with your required Java version
+        distribution: 'temurin'
+
+    - name: Build with Maven
+      run: mvn clean install
+
+    - name: Deploy to GitHub Packages
+      run: mvn deploy -s .github/settings.xml
+
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
